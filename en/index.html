@@ -17,11 +17,33 @@
           <p>Vancouver 3D Printing Enthusiasts Community</p>
         </div>
       </div>
-      <div class="lang">
-        <a class="active" href="/en/">English</a>
-        <a href="/zh/">中文</a>
-      </div>
-    </div>
+      <div class="lang-select">
+  <select id="langSwitcher" aria-label="Language">
+    <option value="en">English</option>
+    <option value="zh">中文</option>
+  </select>
+</div>
+
+<script>
+  (function () {
+    const select = document.getElementById('langSwitcher');
+    if (!select) return;
+
+    // 根据当前路径高亮
+    if (location.pathname.startsWith('/zh')) {
+      select.value = 'zh';
+    } else {
+      select.value = 'en';
+    }
+
+    select.addEventListener('change', function () {
+      const lang = this.value;
+      localStorage.setItem('lang', lang);
+      location.href = '/' + lang + '/';
+    });
+  })();
+</script>
+
 
     <section class="hero">
       <div class="grid">
@@ -57,3 +79,4 @@
   </div>
 </body>
 </html>
+
