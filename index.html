@@ -1,25 +1,36 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ca3dp</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CA3DP — Vancouver 3D Printing Community</title>
+  <meta name="description" content="CA3DP — a Vancouver-based 3D printing enthusiast community." />
+  <meta http-equiv="refresh" content="2;url=/en/" />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;display:grid;place-items:center;min-height:100vh;margin:0;padding:24px;background:#0b0f19;color:#e7eaf3}
+    a{color:#8ab4ff}
+    .box{max-width:560px;text-align:center;opacity:.95}
+    .small{opacity:.75;font-size:14px}
+  </style>
   <script>
     (function () {
-      // 1. 优先使用用户手动选择的语言
-      const saved = localStorage.getItem('lang');
-      if (saved === 'en' || saved === 'zh') {
-        location.replace('/' + saved + '/');
-        return;
-      }
-
-      // 2. 自动识别系统语言
-      const langs = navigator.languages || [navigator.language || 'en'];
-      const isZh = langs.some(l => l.toLowerCase().startsWith('zh'));
-
-      location.replace(isZh ? '/zh/' : '/en/');
+      // 优先按浏览器语言自动跳转：中文 -> /zh/，其他 -> /en/
+      var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+      var target = lang.startsWith('zh') ? '/zh/' : '/en/';
+      // 记住用户选择（如果后续你想加按钮切换可用）
+      try { localStorage.setItem('ca3dp_lang', target); } catch(e){}
+      window.location.replace(target);
     })();
   </script>
 </head>
-<body></body>
+<body>
+  <div class="box">
+    <h1>CA3DP</h1>
+    <p class="small">Redirecting… / 正在跳转…</p>
+    <p class="small">
+      If not redirected:
+      <a href="/en/">English</a> · <a href="/zh/">中文</a>
+    </p>
+  </div>
+</body>
 </html>
