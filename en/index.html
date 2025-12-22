@@ -1,55 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CA3DP – Creative 3D Printing</title>
-
-  <!-- SEO -->
-  <link rel="alternate" hreflang="en" href="https://ca3dp.com/en/">
-  <link rel="alternate" hreflang="zh" href="https://ca3dp.com/zh/">
-  <link rel="alternate" hreflang="x-default" href="https://ca3dp.com/">
-
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; line-height: 1.6; }
-    header { display: flex; justify-content: space-between; align-items: center; }
-    nav button { margin-left: 8px; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CA3DP — Vancouver 3D Printing Community</title>
+  <meta name="description" content="A Vancouver-based community for 3D printing enthusiasts. Meet, share, learn, and build together." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>CA3DP</h1>
+          <p>Vancouver 3D Printing Enthusiasts Community</p>
+        </div>
+      </div>
+      <div class="lang">
+        <a class="active" href="/en/">English</a>
+        <a href="/zh/">中文</a>
+      </div>
+    </div>
 
-<header>
-  <h1>CA3DP</h1>
-  <nav>
-    <button onclick="localStorage.setItem('lang','en');location.href='/en/'">English</button>
-    <button onclick="localStorage.setItem('lang','zh');location.href='/zh/'">中文</button>
-  </nav>
-</header>
+    <section class="hero">
+      <div class="grid">
+        <div class="card">
+          <h2>We’re a Vancouver-based 3D printing community.</h2>
+          <p class="lead">
+            CA3DP is a friendly group of makers who love 3D printing, modeling, and DIY builds.
+            We share tips, show off prints, and help each other troubleshoot—beginner to advanced.
+          </p>
 
-<hr>
+          <div class="badges">
+            <div class="badge">🧠 Tips & troubleshooting</div>
+            <div class="badge">🧩 Modeling & slicing</div>
+            <div class="badge">🛠️ Practical prints & fun projects</div>
+            <div class="badge">🤝 Meet local makers in Vancouver</div>
+          </div>
+        </div>
 
-<h2>Creative 3D Printing for Kids & Families</h2>
+        <div class="card qr">
+          <img src="/assets/qr-whatsapp.png" alt="WhatsApp group QR code" />
+          <div class="hint">
+            Scan to join our WhatsApp group.<br/>
+            (If it fails, open WhatsApp and scan again.)
+          </div>
+        </div>
+      </div>
 
-<p>
-CA3DP is a creative studio focused on 3D-printable toys, DIY kits, and hands-on learning tools.
-We believe creativity should be simple, fun, and accessible.
-</p>
-
-<p>
-Our products are designed for kids, parents, and educators who love building, painting,
-and exploring ideas together.
-</p>
-
-<h3>What we do</h3>
-<ul>
-  <li>3D-printable toys and figurines</li>
-  <li>DIY kits for kids</li>
-  <li>Creative learning tools</li>
-</ul>
-
-<footer>
-  <p>© 2025 CA3DP. All rights reserved.</p>
-</footer>
-
+      <div class="footer">
+        <div>© CA3DP</div>
+        <div>Contact: add a text here if needed</div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
