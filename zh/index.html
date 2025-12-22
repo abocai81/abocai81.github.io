@@ -1,56 +1,59 @@
 <!doctype html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CA3DP – 创意 3D 打印</title>
-
-  <!-- SEO -->
-  <link rel="alternate" hreflang="en" href="https://ca3dp.com/en/">
-  <link rel="alternate" hreflang="zh" href="https://ca3dp.com/zh/">
-  <link rel="alternate" hreflang="x-default" href="https://ca3dp.com/">
-
-  <style>
-    body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-           max-width: 800px; margin: 40px auto; line-height: 1.8; }
-    header { display: flex; justify-content: space-between; align-items: center; }
-    nav button { margin-left: 8px; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CA3DP — 温哥华 3D 打印爱好者社群</title>
+  <meta name="description" content="我们是温哥华本地的 3D 打印爱好者社群：交流经验、分享作品、互相解答问题。" />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
 <body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>CA3DP</h1>
+          <p>温哥华 3D 打印爱好者社群</p>
+        </div>
+      </div>
+      <div class="lang">
+        <a href="/en/">English</a>
+        <a class="active" href="/zh/">中文</a>
+      </div>
+    </div>
 
-<header>
-  <h1>CA3DP</h1>
-  <nav>
-    <button onclick="localStorage.setItem('lang','en');location.href='/en/'">English</button>
-    <button onclick="localStorage.setItem('lang','zh');location.href='/zh/'">中文</button>
-  </nav>
-</header>
+    <section class="hero">
+      <div class="grid">
+        <div class="card">
+          <h2>我们是温哥华的 3D 打印爱好者社群。</h2>
+          <p class="lead">
+            CA3DP 是一个友好的本地交流群，欢迎新手与资深玩家。
+            我们一起分享建模/切片经验、打印参数、材料选择，以及各种实用或有趣的打印作品。
+          </p>
 
-<hr>
+          <div class="badges">
+            <div class="badge">🧠 参数/故障排查</div>
+            <div class="badge">🧩 建模与切片交流</div>
+            <div class="badge">🛠️ 实用打印与创意作品</div>
+            <div class="badge">🤝 认识温哥华本地玩家</div>
+          </div>
+        </div>
 
-<h2>面向儿童与家庭的创意 3D 打印</h2>
+        <div class="card qr">
+          <img src="/assets/qr-wechat.png" alt="微信群二维码" />
+          <div class="hint">
+            扫码加入微信群。<br/>
+            如果二维码过期：请联系群管理员更新二维码图片。
+          </div>
+        </div>
+      </div>
 
-<p>
-CA3DP 是一个专注于 3D 打印玩具、DIY 套装和创意学习工具的创意工作室。
-我们相信，创造力应该是简单、有趣且触手可及的。
-</p>
-
-<p>
-我们的产品为孩子、家长和教育者设计，
-鼓励一起动手制作、涂色和探索创意世界。
-</p>
-
-<h3>我们在做什么</h3>
-<ul>
-  <li>可 3D 打印的玩具与摆件</li>
-  <li>适合儿童的 DIY 套装</li>
-  <li>创意学习与动手工具</li>
-</ul>
-
-<footer>
-  <p>© 2025 CA3DP 版权所有</p>
-</footer>
-
+      <div class="footer">
+        <div>© CA3DP</div>
+        <div>需要加一句联系信息也可以放这里</div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
