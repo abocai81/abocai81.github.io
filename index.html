@@ -84,6 +84,11 @@
       border:1px solid var(--stroke);
     }
 
+    .box p{
+  margin-bottom: 22px;   /* 原来太小，拉开一点更呼吸 */
+  line-height: 1.7;      /* 顺便让段落更舒服 */
+  }
+
     h1{font-size:34px;margin:0 0 10px;}
     p{font-size:15px;color:var(--muted);line-height:1.6;}
 
@@ -109,6 +114,10 @@
       color:var(--muted);
       margin-top:10px;
     }
+
+    .qr-note{
+  margin-bottom: 18px;   /* 拉开和图标的距离 */
+  }
 
     /* ===== 🌟 SOCIAL ICONS (FIXED) ===== */
     .social-row{
@@ -182,7 +191,7 @@
         <div data-lang="en">
           <h1>We’re a Vancouver-based 3D printing community.</h1>
           <p>CA3DP is a friendly local group for makers who love 3D printing, modeling, and DIY builds.
-              We share tips, show off prints, and help each other troubleshoot — beginner to advanced.<br></p>
+              We share tips, show off prints, and help each other troubleshoot — beginner to advanced.</p>
           <div class="pill-row">
             <div class="pill">🧠 Tips & troubleshooting</div>
             <div class="pill">🧩 Modeling & slicing</div>
@@ -194,7 +203,7 @@
         <div data-lang="zh" class="hide">
           <h1>我们是温哥华的 3D 打印爱好者社群。</h1>
           <p>CA3DP 是一个友好、轻松的本地 Maker 社群：3D 打印、建模、切片、DIY 制作、问题排查、作品分享都欢迎。
-              新手到进阶都能找到同好一起交流。<br></p>
+              新手到进阶都能找到同好一起交流。</p>
           <div class="pill-row">
             <div class="pill">🧠 经验分享与排错</div>
               <div class="pill">🧩 建模与切片交流</div>
@@ -210,10 +219,10 @@
         <img src="assets/wechat.png" class="qr hide" data-lang="zh">
 
         <div class="qr-note" data-lang="en">
-          Scan to join our WhatsApp group.<br>
+          Scan to join our WhatsApp group.
         </div>
         <div class="qr-note hide" data-lang="zh">
-          扫码加我微信（中转），邀请进群。<br>
+          扫码加我微信（中转），邀请进群。
         </div>
 
         <!-- SOCIAL ICONS -->
@@ -249,6 +258,7 @@
 
 </body>
 </html>
+
 
 
 
