@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="CA3DP - Vancouver 3D Printing Enthusiasts Community" />
   <title>CA3DP · Vancouver 3D Printing Community</title>
+
   <style>
     :root{
       --bg1:#e9fbff;
@@ -22,7 +23,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--text);
       background:
         radial-gradient(900px 500px at 15% 15%, rgba(88,179,255,.35), transparent 60%),
@@ -31,297 +32,170 @@
       min-height:100vh;
     }
 
-    .wrap{
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 28px 18px 44px;
-    }
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 44px;}
 
-    /* Top bar (mobile-friendly) */
     .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      padding: 10px 4px 18px;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:10px 4px 18px;
     }
-    .brand-mini{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .logo-dot{
-      width:14px;height:44px;border-radius:999px;
-      background: linear-gradient(180deg, rgba(88,179,255,1), rgba(25,195,179,1));
-      box-shadow: 0 10px 20px rgba(88,179,255,.25);
-    }
+
+    .brand-mini{display:flex;gap:10px;align-items:center;}
     .logo-img{
-  height:44px;          /* 保持你现在的视觉高度 */
-  width:44px;           /* 1:1 正方形 */
-  object-fit: contain;  /* 不拉伸、不裁切 */
-  border-radius:12px;   /* 轻微圆角，和整体风格一致 */
-  box-shadow: 0 8px 18px rgba(0,0,0,.12);
-  background: #ffffff;
-}
-    .brand-text{
-      display:flex;
-      flex-direction:column;
-      line-height:1.2;
+      width:44px;height:44px;object-fit:contain;border-radius:12px;
+      background:#fff;box-shadow:0 8px 18px rgba(0,0,0,.12);
     }
-    .brand-text b{font-size:16px; letter-spacing:.2px}
-    .brand-text span{font-size:12px; color:var(--muted)}
-    .lang{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
+    .brand-text b{font-size:16px;}
+    .brand-text span{font-size:12px;color:var(--muted);}
+
     select{
-      appearance:auto;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid var(--stroke);
-      background: #ffffffd9;
-      color: var(--text);
-      box-shadow: 0 10px 24px rgba(10,25,60,.08);
-      outline:none;
-      font-size:14px;
+      padding:10px 12px;border-radius:12px;border:1px solid var(--stroke);
+      background:#fff;font-size:14px;
     }
 
-    /* Main card */
     .panel{
-      background: var(--card);
-      border: 1px solid rgba(215,231,255,.9);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-      overflow:hidden;
+      background:var(--card);border-radius:var(--radius);
+      box-shadow:var(--shadow);padding:18px;
     }
 
-    /* Layout: desktop 2 columns, mobile 1 column */
     .grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      padding: 18px;
+      display:grid;grid-template-columns:1.1fr .9fr;gap:18px;
     }
 
     .box{
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(215,231,255,.9);
-      border-radius: 18px;
-      padding: 18px;
-      min-height: 340px;
+      background:#fff;border-radius:18px;padding:18px;
+      border:1px solid var(--stroke);
     }
 
-    h1{
-      margin: 0 0 10px;
-      font-size: 34px;
-      line-height: 1.1;
-      letter-spacing: -0.6px;
-    }
-    p{
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.65;
-    }
+    h1{font-size:34px;margin:0 0 10px;}
+    p{font-size:15px;color:var(--muted);line-height:1.6;}
 
-    .pill-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top: 14px;
-    }
+    .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;}
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(215,231,255,.95);
-      background: linear-gradient(180deg, rgba(88,179,255,.12), rgba(25,195,179,.06));
-      color: #10335e;
-      font-size: 13px;
-      user-select:none;
-      white-space:nowrap;
+      padding:10px 12px;border-radius:999px;font-size:13px;
+      background:#eef7ff;border:1px solid var(--stroke);
     }
 
-    .qr-wrap{
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      height:100%;
-      text-align:center;
-    }
+    .qr-wrap{text-align:center;}
+    .qr{width:100%;border-radius:14px;}
+    .qr-note{font-size:13px;color:var(--muted);margin-top:10px;}
 
-    .qr-card{
-      width: min(320px, 100%);
-      background: rgba(255,255,255,.8);
-      border: 1px solid rgba(215,231,255,.95);
-      border-radius: 16px;
-      padding: 14px;
+    /* 🌟 Social icons */
+    .social-row{
+      display:flex;justify-content:center;gap:14px;margin-top:14px;
     }
-    .qr{
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 14px;
-      object-fit: cover;
-      border: 1px solid rgba(215,231,255,.95);
-      background: #f6fbff;
-      display:block;
+    .social-btn{
+      width:44px;height:44px;border-radius:999px;
+      display:flex;align-items:center;justify-content:center;
+      background:#fff;border:1px solid var(--stroke);
+      box-shadow:0 10px 24px rgba(0,0,0,.1);
+      transition:.2s;
+      color:#0b1b33;
     }
-    .qr-note{
-      margin-top:10px;
-      font-size: 13px;
-      color: var(--muted);
-      line-height:1.55;
-    }
+    .social-btn:hover{transform:translateY(-2px);}
 
-    .footer{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      padding: 12px 18px 16px;
-      color: rgba(90,107,134,.9);
-      font-size: 12px;
-    }
-    .footer a{color:inherit}
-    .hide{display:none !important;}
+    .hide{display:none}
 
-    /* Responsive */
-    @media (max-width: 860px){
-      .grid{ grid-template-columns: 1fr; }
-      h1{ font-size: 28px; }
-      .box{ min-height: unset; }
-      .footer{ flex-direction:column; align-items:flex-start; }
+    @media(max-width:860px){
+      .grid{grid-template-columns:1fr;}
+      h1{font-size:28px;}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="brand-mini">
-        <img src="assets/ca3dp_logo.png" alt="CA3DP logo" class="logo-img">
-        <div class="brand-text">
-          <b>CA3DP</b>
-          <span>Vancouver 3D Printing Enthusiasts Community</span>
-        </div>
-      </div>
+<div class="wrap">
 
-      <div class="lang">
-        <select id="langSelect" aria-label="Language">
-          <option value="en">English</option>
-          <option value="zh">中文</option>
-        </select>
+  <div class="topbar">
+    <div class="brand-mini">
+      <img src="assets/ca3dp_logo.png" class="logo-img" />
+      <div class="brand-text">
+        <b>CA3DP</b><br>
+        <span>Vancouver 3D Printing Enthusiasts Community</span>
       </div>
     </div>
 
-    <div class="panel">
-      <div class="grid">
-        <!-- LEFT: Intro -->
-        <section class="box">
-          <!-- EN -->
-          <div data-lang="en">
-            <h1>We’re a Vancouver-based 3D printing community.</h1>
-            <p>
-              CA3DP is a friendly local group for makers who love 3D printing, modeling, and DIY builds.
-              We share tips, show off prints, and help each other troubleshoot — beginner to advanced.
-            </p>
-
-            <div class="pill-row">
-              <div class="pill">🧠 Tips & troubleshooting</div>
-              <div class="pill">🧩 Modeling & slicing</div>
-              <div class="pill">🛠️ Practical prints & fun projects</div>
-              <div class="pill">🤝 Meet makers in Vancouver</div>
-            </div>
-          </div>
-
-          <!-- ZH -->
-          <div data-lang="zh" class="hide">
-            <h1>我们是温哥华的 3D 打印爱好者社群。</h1>
-            <p>
-              CA3DP 是一个友好、轻松的本地 Maker 社群：3D 打印、建模、切片、DIY 制作、问题排查、作品分享都欢迎。
-              新手到进阶都能找到同好一起交流。
-            </p>
-
-            <div class="pill-row">
-              <div class="pill">🧠 经验分享与排错</div>
-              <div class="pill">🧩 建模与切片交流</div>
-              <div class="pill">🛠️ 实用打印与趣味项目</div>
-              <div class="pill">🤝 认识温哥华本地同好</div>
-            </div>
-          </div>
-        </section>
-
-        <!-- RIGHT: QR -->
-        <aside class="box">
-          <!-- EN -->
-          <div class="qr-wrap" data-lang="en">
-            <div class="qr-card">
-              <img class="qr" src="assets/whatsapp.png" alt="WhatsApp group QR code" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hide');" />
-              <div class="qr-note hide">
-                QR image not found.<br/>
-                Please upload <b>assets/whatsapp.png</b> in your GitHub repo.
-              </div>
-              <div class="qr-note">
-                Scan to join our <b>WhatsApp</b> group.<br/>
-                If scanning fails, open WhatsApp and scan again.
-              </div>
-            </div>
-          </div>
-
-          <!-- ZH -->
-          <div class="qr-wrap hide" data-lang="zh">
-            <div class="qr-card">
-              <img class="qr" src="assets/wechat.png" alt="微信二维码" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hide');" />
-              <div class="qr-note hide">
-                找不到二维码图片。<br/>
-                请把图片上传为：<b>assets/wechat.png</b>
-              </div>
-              <div class="qr-note">
-                扫码添加我的微信（验证：我要加入CA3DP群）。<br/>
-                我会邀请你加入 CA3DP 微信群（避免 7 天失效的群二维码问题）。
-              </div>
-            </div>
-          </div>
-        </aside>
-      </div>
-
-      <div class="footer">
-        <div>© <span id="year"></span> CA3DP</div>
-        </div>
-    </div>
+    <select id="langSelect">
+      <option value="en">English</option>
+      <option value="zh">中文</option>
+    </select>
   </div>
 
-  <script>
-    // Auto year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <div class="panel">
+    <div class="grid">
 
-    // Language switch
-    const langSelect = document.getElementById('langSelect');
-    const blocks = Array.from(document.querySelectorAll('[data-lang]'));
+      <!-- LEFT -->
+      <div class="box">
+        <div data-lang="en">
+          <h1>We’re a Vancouver-based 3D printing community.</h1>
+          <p>CA3DP is a friendly local group for makers who love 3D printing and DIY builds.</p>
+          <div class="pill-row">
+            <div class="pill">🧠 Tips & troubleshooting</div>
+            <div class="pill">🧩 Modeling & slicing</div>
+            <div class="pill">🛠️ Practical prints</div>
+            <div class="pill">🤝 Meet makers</div>
+          </div>
+        </div>
 
-    function setLang(lang){
-      langSelect.value = lang;
-      blocks.forEach(el=>{
-        const isMatch = el.getAttribute('data-lang') === lang;
-        el.classList.toggle('hide', !isMatch);
-      });
-      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    }
+        <div data-lang="zh" class="hide">
+          <h1>我们是温哥华的 3D 打印爱好者社群。</h1>
+          <p>CA3DP 是一个友好、轻松的本地 Maker 社群。</p>
+          <div class="pill-row">
+            <div class="pill">🧠 经验分享</div>
+            <div class="pill">🧩 建模切片</div>
+            <div class="pill">🛠️ 实用打印</div>
+            <div class="pill">🤝 本地同好</div>
+          </div>
+        </div>
+      </div>
 
-    // Detect system language -> zh goes to Chinese, otherwise English
-    const sys = (navigator.language || '').toLowerCase();
-    const initLang = sys.startsWith('zh') ? 'zh' : 'en';
-    setLang(initLang);
+      <!-- RIGHT -->
+      <div class="box qr-wrap">
+        <img src="assets/whatsapp.png" class="qr" data-lang="en">
+        <img src="assets/wechat.png" class="qr hide" data-lang="zh">
 
-    langSelect.addEventListener('change', (e)=> setLang(e.target.value));
-  </script>
+        <div class="qr-note" data-lang="en">
+          Scan to join our WhatsApp group.
+        </div>
+        <div class="qr-note hide" data-lang="zh">
+          扫码加我微信（中转），邀请进群。
+        </div>
+
+        <!-- 🌟 Social Icons -->
+        <div class="social-row">
+  <a class="social-btn" href="https://instagram.com/YOUR_ACCOUNT"
+     target="_blank" aria-label="Instagram">
+    <img src="assets/Instagram_icon.png" alt="Instagram"
+         class="social-icon">
+  </a>
+
+  <a class="social-btn" href="https://youtube.com/@YOUR_CHANNEL"
+     target="_blank" aria-label="YouTube">
+    <img src="assets/Youtube_icon.png" alt="YouTube"
+         class="social-icon">
+  </a>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const langSelect = document.getElementById('langSelect');
+  const blocks = document.querySelectorAll('[data-lang]');
+
+  function setLang(lang){
+    langSelect.value = lang;
+    blocks.forEach(el=>{
+      el.classList.toggle('hide', el.dataset.lang !== lang);
+    });
+  }
+
+  const sys = (navigator.language||'').toLowerCase();
+  setLang(sys.startsWith('zh') ? 'zh' : 'en');
+  langSelect.onchange = e => setLang(e.target.value);
+</script>
+
 </body>
 </html>
-
-
-
