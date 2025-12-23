@@ -55,6 +55,14 @@
       background: linear-gradient(180deg, rgba(88,179,255,1), rgba(25,195,179,1));
       box-shadow: 0 10px 20px rgba(88,179,255,.25);
     }
+    .logo-img{
+  height:44px;          /* 保持你现在的视觉高度 */
+  width:44px;           /* 1:1 正方形 */
+  object-fit: contain;  /* 不拉伸、不裁切 */
+  border-radius:12px;   /* 轻微圆角，和整体风格一致 */
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  background: #ffffff;
+}
     .brand-text{
       display:flex;
       flex-direction:column;
@@ -196,7 +204,7 @@
   <div class="wrap">
     <div class="topbar">
       <div class="brand-mini">
-        <div class="logo-dot" aria-hidden="true"></div>
+        <img src="assets/ca3dp_logo.png" alt="CA3DP logo" class="logo-img">
         <div class="brand-text">
           <b>CA3DP</b>
           <span>Vancouver 3D Printing Enthusiasts Community</span>
@@ -315,3 +323,4 @@
   </script>
 </body>
 </html>
+
